@@ -1,0 +1,43 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		
+	</head>
+	<body>
+		<div>
+		<h1>Train Records</h1>
+		</div>
+		<br/>
+		<div class="container">
+		<table width="500px" border="1">
+			<tr>
+				<td>PNR NUMBER</td>
+				<td>Train Number</td>
+				<td>Train Name</td>
+				<td>Date of Journey</td>
+				<td>Class</td>
+				<td>Seat Number</td>
+				<td>From</td>
+				<td>To</td>
+				<td>Departure Time</td>
+				<td>Arrival Time</td>
+				<td>Confirm</td>
+			</tr>
+			<tr th:each="r:${records}">
+				<td th:text="${r.pnr}"></td>
+				<td th:text="${r.tnumber}"></td>
+				<td th:text="${r.tname}"></td>
+				<td th:text="${r.doj}"></td>
+				<td th:text="${r.clas}"></td>
+				<td th:text="${r.snumber}"></td>
+				<td th:text="${r.froma}"></td>
+				<td th:text="${r.toa}"></td>
+				<td th:text="${r.dtime}"></td>
+				<td th:text="${r.atime}"></td>
+				<td><a th:href="@{/confirmed}">Confirm</a></td>
+			</tr>
+			<br/>
+		</table>
+		</div>
+			
+	</body>
+</html>	

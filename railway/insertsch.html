@@ -1,0 +1,46 @@
+<html xmlns:th="www.thymeleaf.org">
+	<head>
+		
+	</head>
+	<body>
+	<div>
+		<h2>Train Details</h2>
+	</div>	
+	<br/>
+    <div class="container">
+		<form th:method="post" th:action="@{/savesch}" th:object="${records}">
+			    <label>PNR</label>
+				<input type="text" th:field="*{pnr}" />
+				<br/>
+				<label>Train Number</label>
+				<input type="text" th:field="*{tnumber}" />
+				<br/>
+				<label>Train Name</label>
+				<input type="text" th:field="*{tname}" />
+				<br/>
+				<label>Date Of Journey</label>
+				<input type="text" th:field="*{doj}" />
+				<br/>
+				<label>Class</label>
+				<input type="text" th:field="*{clas}" />
+				<br/>
+				<label>Seat Number</label>
+				<input type="text" th:field="*{snumber}" />
+				<br/>
+				<label>From</label>
+				<input type="text" th:field="*{froma}" />
+				<br/>
+				<label>To</label>
+				<input type="text" th:field="*{toa}" />
+				<br/>
+				<label>Departure Time</label>
+				<input type="text" th:field="*{dtime}" />
+				<br/>
+				<label>Arrival Time</label>
+				<input type="text" th:field="*{atime}" />
+				<br/>
+				<input type="submit" value="Insert" />						
+		</form>	
+	</div>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<body>
+		<div>
+		<h1>User Records</h1>
+		</div>
+		<br/>
+		<div class="container">
+		<table width="500px" border="2">
+			<tr>
+				<td>Name</td>
+				<td>gender</td>
+				<td>Contact</td>
+				<td>Address</td>
+				<td>Email</td>
+				<td>Update</td>
+				<td>Delete</td>
+				<td>Insert</td>
+			</tr>
+			<tr th:each="r:${records}">
+				<td th:text="${r.name}"></td>
+				<td th:text="${r.gender}"></td>
+				<td th:text="${r.contact}"></td>
+				<td th:text="${r.address}"></td>
+				<td th:text="${r.email}"></td>
+				<td><a th:href="@{/updateuser/{gemail}(gemail=${r.email})}">Update</a></td>	
+				<td><a th:href="@{/deleteuser/{gemail}(gemail=${r.email})}">Delete</a></td>
+				<td><a th:href="@{/insertuser}">Insert</a></td>	
+			</tr>
+			
+			<br/>
+		</table>
+		</div>
+		
+	</body>
+</html>	
